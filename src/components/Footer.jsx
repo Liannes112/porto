@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
@@ -8,16 +8,6 @@ const Footer = () => {
   const instagram = 'https://www.instagram.com/daaniel_andre?igsh=MTRicjV2a3Q5N3dhaA=='
   const email = 'mailto:andredn74@gmail.com'
   const github = 'https://github.com/liannes112/'
-  const navigate = useNavigate()
-  const location = useLocation()
-
-  const handleClick = (route) => {
-    if (location.pathname === route) {
-      window.location.reload();
-    } else {
-      navigate(route);
-    }
-  }
   
   return (
     <>
@@ -49,19 +39,16 @@ const Footer = () => {
               <h3 className="font-semibold text-xl mb-5 lg:text-2xl">Navigation</h3>
               <div className="flex flex-col w-1/3">
                 <Link
-                  onClick={() => handleClick("/myporto")}
                   className="text-base lg:text-lg hover:text-blue mb-2"
                   to="/myporto">
                   Home
                 </Link>
                 <Link
-                  onClick={() => handleClick("/portofolio")}
                   className="text-base lg:text-lg hover:text-blue mb-2"
                   to="/portofolio">
                   Portofolio
                 </Link>
                 <Link
-                  onClick={() => handleClick("/contact")}
                   className="text-base lg:text-lg hover:text-blue mb-2"
                   to="/contact">
                   Contact
